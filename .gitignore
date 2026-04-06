@@ -1,0 +1,40 @@
+### Build (Maven)
+
+target/
+
+### Logs
+
+*.log
+
+### Arquivos temporários
+
+*.tmp
+*.swp
+*~
+
+### IntelliJ IDEA
+
+.idea/
+*.iml
+*.iws
+out/
+
+### Sistema operacional
+
+.DS_Store
+Thumbs.db
+
+### Banco H2 (arquivos locais)
+
+*.mv.db
+*.trace.db
+
+### Variáveis de ambiente / segredos
+
+.env
+
+### Configurações por ambiente
+
+application-dev.yml
+application-prod.yml
+application-local.yml
