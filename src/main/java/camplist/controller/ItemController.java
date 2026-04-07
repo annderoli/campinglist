@@ -1,7 +1,7 @@
 package camplist.controller;
 
 import camplist.entity.Item;
-import camplist.repository.ItemRepository;
+import camplist.service.ItemService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,26 +10,24 @@ import java.util.List;
 @RequestMapping("/")
 public class ItemController {
 
-    private ItemRepository repository;
+    private final ItemService service;
 
-    public ItemController(ItemRepository repository) {
-        this.repository = repository;
+    public ItemController(ItemService service) {
+        this.service = service;
     }
 
     @PostMapping
-    public Item createItem( @RequestBody Item item) {
-        return repository.save(item);
-
+    public Item createItem(@RequestBody Item item) {
+        return service.createItem(item);
     }
 
     @GetMapping
     public List<Item> getAllItems() {
-        return repository.findAll();
+        return service.getAllItems();
     }
 
     @GetMapping("/{id}")
     public Item getItemById(@PathVariable Long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Item Não Encontrado"));
+        return service.getItemById(id);
     }
 }
