@@ -79,9 +79,7 @@ tmp/
 
 # ========================
 
-frontend-campinglist/node_modules/
-frontend-campinglist/dist/
-frontend-campinglist/build/
+frontend-campinglist/
 
 # ========================
 
